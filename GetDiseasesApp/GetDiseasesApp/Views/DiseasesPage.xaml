@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GetDiseasesApp.Views.DiseasesPage">
+    <StackLayout>
+        <Frame BackgroundColor="#1C6CE1">
+            <Label Text="Diseases list" HorizontalOptions="Center" FontSize="Large" FontAttributes="Bold" TextColor="White"/>
+        </Frame>
+        <Button Text="Get diseases" Command="{Binding GetDiseasesCommand}" BackgroundColor="#1C6CE1" TextColor="White"/>
+        <ActivityIndicator IsRunning="{Binding Loading}" HeightRequest="{Binding Height}"/>
+        <CollectionView ItemsSource="{Binding Data}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Label Text="{Binding .}" FontSize="Medium" TextColor="Black" Padding="10"/>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>
