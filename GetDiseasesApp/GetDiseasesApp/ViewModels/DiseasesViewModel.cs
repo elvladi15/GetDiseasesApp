@@ -29,7 +29,7 @@ namespace GetDiseasesApp.ViewModels
             }
             catch
             {
-                Data.Add("There is no internet connection");
+                Data = new ObservableCollection<string>() { "There is no internet connection" };
             }
             Loading = false;
             Height = 0;
